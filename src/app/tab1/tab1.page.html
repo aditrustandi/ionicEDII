@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+
     <ion-title>
-      Tab 1
+      Data Pegawai
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="tambah">
+        <ion-icon slot="icon-only" ios="add-outline" md="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+
+    <ion-item *ngFor="let p of data_pegawai">
+
+      <ion-label>
+        <h2>{{p.nama}}</h2>
+        <h3>{{p.nik}}</h3>
+        <p>{{p.jenis_kelamin}} - {{p.tanggal_lahir}}</p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
 </ion-content>

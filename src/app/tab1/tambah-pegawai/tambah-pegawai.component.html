@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      Tambah Data Pegawai
+    </ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form [formGroup]="todo">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nama <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input formControlName="nama" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">NIK <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input formControlName="nik" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Jenis Kelamin <ion-text color="danger">*</ion-text></ion-label>
+        <ion-select formControlName="jenis_kelamin" placeholder="Pilih Satu">
+          <ion-select-option value="L">Laki - laki</ion-select-option>
+          <ion-select-option value="P">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Tanggal Lahir <ion-text color="danger">*</ion-text></ion-label>
+        <ion-datetime formControlName="tanggal_lahir" value="" placeholder="Pilih Tanggal"></ion-datetime>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="tambahData()" [disabled]="todo.invalid">Tambah</ion-button>
+    </div>
+  </form>
+
+</ion-content>

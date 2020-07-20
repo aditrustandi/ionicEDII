@@ -12,12 +12,12 @@ export class Tab1Page implements OnInit {
 
   constructor(private pegawaiService: PegawaiService) {}
 
-  ngOnInit() {
+  ngOnInit()
+  {
+    
+  }
 
-    // this.pegawaiService.sendGetRequest().subscribe((data: any[])=>{
-    //   console.log(data);
-      
-    // })  
+  ionViewWillEnter() {
     const urlDataPegawai = '/index.php/Pegawai/DataPegawai';
     this.pegawaiService.sendGetRequest(urlDataPegawai).subscribe(
       (data: any[])=>{
